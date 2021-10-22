@@ -4,10 +4,14 @@ import { useSelector, useDispatch } from 'react-redux';
 
 const Auth = () => {
   const dispatch = useDispatch();
-  const isAuthenticated = useSelector(state => state.authentication.isAuthenticated);
+  const isAuthenticated = useSelector(state => console.log(state.authentication.isAuthenticated));
 
   const loginHandler = () => {
     dispatch(authActions.login());
+  };
+
+  const logoutHandler = () => {
+    dispatch(authActions.logout());
   };
 
   return (
@@ -23,6 +27,9 @@ const Auth = () => {
             <input type='password' id='password' />
           </div>
           <button onClick={loginHandler}>Login</button>
+        </form>}
+        {isAuthenticated && <form>
+          <button onClick={logoutHandler}>Logout</button>
         </form>}
       </section>
     </main>
