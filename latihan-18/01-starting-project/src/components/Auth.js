@@ -12,16 +12,10 @@ const Auth = () => {
     dispatch(authActions.login());
   };
 
-  const logoutHandler = (event) => {
-    event.preventDefault()
-
-    dispatch(authActions.logout());
-  };
-
   return (
     <main className={classes.auth}>
       <section>
-        {!isAuthenticated && <form>
+        <form>
           <div className={classes.control}>
             <label htmlFor='email'>Email</label>
             <input type='email' id='email' />
@@ -31,10 +25,7 @@ const Auth = () => {
             <input type='password' id='password' />
           </div>
           <button onClick={loginHandler}>Login</button>
-        </form>}
-        {isAuthenticated && <form>
-          <button onClick={logoutHandler}>Logout</button>
-        </form>}
+        </form>
       </section>
     </main>
   );
