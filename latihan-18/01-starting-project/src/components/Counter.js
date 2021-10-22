@@ -9,7 +9,7 @@ const Counter = () => {
 
   const toggleCounterHandler = () => {
     dispatch(counterActions.toggleCounter());
-  };
+  }; 
 
   const incrementHandler = () => {
     dispatch(counterActions.increment());
