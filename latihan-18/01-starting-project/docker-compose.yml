@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  latihan-18:
+    build:
+      context: .
+    volumes:
+      - .:/01-starting-project
+    ports:
+      - 3000:3000
+    image: latihan-18:react_from_udemy
+    container_name: latihan-18
+    command: npm start
